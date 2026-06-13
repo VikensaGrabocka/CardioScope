@@ -1,0 +1,27 @@
+swagger: "2.0"
+info:
+  title: "CardioScope API"
+  description: "API Gateway -> Cloud Run"
+  version: "1.0.0"
+schemes:
+  - https
+produces:
+  - application/json
+  
+paths:
+  /predict:
+    post:
+      operationId: "predict"
+      x-google-backend: 
+        address: https://heart-pcg-api-1058294664437.us-central1.run.app/predict
+      responses:
+        "200":
+          description: OK
+  /health:
+    get:
+      operationId: "health"
+      x-google-backend: 
+        address: https://heart-pcg-api-1058294664437.us-central1.run.app/health
+      responses:
+        "200":
+          description: OK
